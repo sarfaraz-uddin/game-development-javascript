@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas 
+    style="background-image: url('/gradient.jpg');" 
+    id="canva" 
+    width="300" 
+    height="300">
+    </canvas>
+
+    <script>
+        const canvas=document.getElementById("canva");
+        const context=canvas.getContext("2d");
+
+        canvas.addEventListener("mousemove",(event)=>{
+            console.log(event.clientX,event.clientY);
+
+            context.clearRect(0,0,300,300);
+
+            context.beginPath();
+            context.fillStyle="white";
+            context.arc(event.clientX,event.clientY,100,0,360);
+            context.stroke();
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle="white";
+            context.arc(event.clientX,event.clientY,90,0,360);
+            context.stroke();
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle="black";
+            context.arc(event.clientX,event.clientY,80,0,360);
+            context.stroke();
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle="black";
+            context.arc(event.clientX,event.clientY,70,0,360);
+            context.stroke();
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle="blue";
+            context.arc(event.clientX,event.clientY,60,0,360);
+            context.stroke();
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle="blue";
+            context.arc(event.clientX,event.clientY,50,0,360);
+            context.stroke();
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle="red";
+            context.arc(event.clientX,event.clientY,40,0,360);
+            context.stroke();
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle="red";
+            context.arc(event.clientX,event.clientY,30,0,360);
+            context.stroke();
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle="yellow";
+            context.arc(event.clientX,event.clientY,20,0,360);
+            context.stroke();
+            context.fill();
+
+            context.beginPath();
+            context.fillStyle="yellow";
+            context.arc(event.clientX,event.clientY,10,0,360);
+            context.stroke();
+            context.fill();
+
+        });
+    </script>
+</body>
+</html>
