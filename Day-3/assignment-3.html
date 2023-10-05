@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Ball</title>
+</head>
+<body>
+    <canvas style="background-color: black;" id="canvas" width="400" height="300"></canvas>
+
+    <script>
+        const canvas=document.getElementById("canvas");
+        const c=canvas.getContext("2d");
+        
+        let x=10;
+        let y=10;
+        let fall=false;
+
+         let animation=canvas.addEventListener("click",(event)=>{
+            x=event.clientX;
+            y=event.clientY;   
+            fall=true;  
+        });
+
+        
+        function render(){
+            c.clearRect(0,0,400,300);
+            c.beginPath();
+            c.fillStyle="white";
+            c.arc(x,y,10,0,360);
+            c.fill();
+            if(fall===true){
+                y+=3;
+                if(y>300 -10){
+                    fall=false;
+                }
+            }
+            window.requestAnimationFrame(render);
+        }
+    render();
+    </script>
+</body>
+</html>

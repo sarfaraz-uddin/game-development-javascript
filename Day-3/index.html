@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Loop</title>
+</head>
+<body>
+    <canvas style="background-color: red;"
+    id="canvas" width="300" height="200">
+    </canvas>
+
+    <script>
+        const canvas=document.getElementById("canvas");
+        const c=canvas.getContext("2d");
+
+        let x=0;
+        let y=0;
+        function renderbox(){
+            c.beginPath();
+            c.rect(x,y,50,50);
+            c.fill();
+            x+=1;
+            y+=1;
+        }
+
+        //Game Loop
+        function render(){
+            //update code goes here
+            c.clearRect(0,0,300,300);
+            renderbox();
+            window.requestAnimationFrame(render);
+        }
+        
+        render();
+        // setTimeout(()=>{
+        //     console.log("test");
+        // },1000);
+
+        //fast i=1 dekhi continue console trigger hunxha
+        // let i=0;
+        // setInterval(() => {
+        //     console.log("i=",i);
+        //     i++;
+        // }, 100);
+
+        // let x=0;
+        // let y=0;
+        // setInterval(() => {
+        //     c.clearRect(0,0,300,300);
+        //     console.log("x=",x);
+        //     c.beginPath();
+        //     c.rect(x,y,50,50);
+        //     c.fill();
+        //     x=x+1;
+        //     y=y+1;
+        // }, 1000/60);//60fps
+        //if(x>300)clearInterval(animation)
+    </script>
+</body>
+</html>
